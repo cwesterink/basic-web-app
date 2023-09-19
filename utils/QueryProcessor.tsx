@@ -15,7 +15,7 @@ export default function QueryProcessor(query: string): string {
   if (query.toLocaleLowerCase().includes("what is your name?")) {
     return 'c'
   }
-  const maxMatch = query.match(/Which of the following numbers is the largest: (\d+), (\d+), (\d+)?/);
+  const maxMatch = query.match(/which of the following numbers is the largest: (\d+), (\d+), (\d+)?/);
   if (maxMatch) {
     const x: number = parseInt(maxMatch[1]);
     const y: number = parseInt(maxMatch[2]);
