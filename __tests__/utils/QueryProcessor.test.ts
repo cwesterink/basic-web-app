@@ -32,4 +32,12 @@ describe("QueryProcessor", () => {
             "c"
           ));
     });
+    test('Which of the following numbers is the largest: 94, 12, 14?', () => {
+        const query = "Which of the following numbers is the largest: 94, 12, 14?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "94"
+          ));
+    });
+    
 });
