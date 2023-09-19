@@ -11,6 +11,9 @@ export default function QueryProcessor(query: string): string {
       "cwesteri"
     );
   }
+  if (query.toLocaleLowerCase().includes("what is your name?")) {
+    return 'c'
+  }
 
   return "";
 }
