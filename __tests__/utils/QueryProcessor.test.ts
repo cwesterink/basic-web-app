@@ -39,5 +39,13 @@ describe("QueryProcessor", () => {
             "94"
           ));
     });
+    test('mult', () => {
+        const query =  "What is 13 multiplied by 48?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "624"
+          ));
+    });
+
     
 });

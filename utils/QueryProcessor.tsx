@@ -21,19 +21,19 @@ export default function QueryProcessor(query: string): string {
     const y: number = parseInt(maxMatch[2]);
     return Math.max(x,y).toString();
   }
-  const addMatch = query.match(/What is (\d+) plus (\d+)/);
+  const addMatch = query.match(/what is (\d+) plus (\d+)/);
   if (addMatch) {
     const x: number = parseInt(addMatch[1]);
     const y: number = parseInt(addMatch[2]);
     return (x+y).toString();
   }
-  const multMatch = query.match(/What is (\d+) multiplied by (\d+)/);
+  const multMatch = query.match(/what is (\d+) multiplied by (\d+)/);
   if (multMatch) {
     const x: number = parseInt(multMatch[1]);
     const y: number = parseInt(multMatch[2]);
     return (x*y).toString();
   }
-  const minusMatch = query.match(/What is (\d+) minus (\d+)/);
+  const minusMatch = query.match(/what is (\d+) minus (\d+)/);
   if (minusMatch) {
     const x: number = parseInt(minusMatch[1]);
     const y: number = parseInt(minusMatch[2]);
