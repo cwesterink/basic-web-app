@@ -33,6 +33,13 @@ export default function QueryProcessor(query: string): string {
     const y: number = parseInt(multMatch[2]);
     return (x*y).toString();
   }
+  const minusMatch = query.match(/What is (\d+) minus (\d+)/);
+  if (minusMatch) {
+    const x: number = parseInt(minusMatch[1]);
+    const y: number = parseInt(minusMatch[2]);
+    return (x-y).toString();
+  }
+
 
   // if (query.toLocaleLowerCase().includes("which of the following numbers is the largest: ")) {
   //   const numbers = query.match('/\d+/')!
