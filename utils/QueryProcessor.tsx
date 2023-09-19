@@ -15,6 +15,12 @@ export default function QueryProcessor(query: string): string {
   if (query.toLocaleLowerCase().includes("what is your name?")) {
     return 'c'
   }
+  const maxMatch = query.match(/Which of the following numbers is the largest: (\d+), (\d+), (\d+)?/);
+  if (maxMatch) {
+    const x: number = parseInt(maxMatch[1]);
+    const y: number = parseInt(maxMatch[2]);
+    return Math.max(x,y).toString();
+  }
   const addMatch = query.match(/What is (\d+) plus (\d+)/);
   if (addMatch) {
     const x: number = parseInt(addMatch[1]);
@@ -22,9 +28,9 @@ export default function QueryProcessor(query: string): string {
     return (x+y).toString();
   }
   const multMatch = query.match(/What is (\d+) multiplied by (\d+)/);
-  if (addMatch) {
-    const x: number = parseInt(addMatch[1]);
-    const y: number = parseInt(addMatch[2]);
+  if (multMatch) {
+    const x: number = parseInt(multMatch[1]);
+    const y: number = parseInt(multMatch[2]);
     return (x*y).toString();
   }
 
