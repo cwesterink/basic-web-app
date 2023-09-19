@@ -15,21 +15,14 @@ export default function QueryProcessor(query: string): string {
   if (query.toLocaleLowerCase().includes("what is your name?")) {
     return 'c'
   }
+  if (query.includes("plus")) {
+    const numbers = query.match('/\d+/')?.map(parseInt)!;    
+    return numbers.reduce((x,y) => x+y).toString()
+  }
+  
   if (query.toLocaleLowerCase().includes("Which of the following numbers is the largest: ")) {
     const numbers = query.match('/\d+/')?.map(parseInt)!;    
     return Math.max(...numbers).toString();
   }
   return "";
 }
-
-
-// const map = {
-//   "what is your name?": "c",
-
-// }
-
-// const questions = new Map<string, string>(
-//   [
-//     ["what is your name?", "c"]
-//   ]
-// )
