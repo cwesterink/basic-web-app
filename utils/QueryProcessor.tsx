@@ -1,4 +1,5 @@
 export default function QueryProcessor(query: string): string {
+  query = query.toLocaleLowerCase();
   if (query.toLowerCase().includes("shakespeare")) {
     return (
       "William Shakespeare (26 April 1564 - 23 April 1616) was an " +
@@ -14,8 +15,9 @@ export default function QueryProcessor(query: string): string {
   if (query.toLocaleLowerCase().includes("what is your name?")) {
     return 'c'
   }
-  if (query.toLocaleLowerCase().includes("Which of the following numbers is the largest: 5, 98, 77?")) {
-    return '98'
+  if (query.toLocaleLowerCase().includes("Which of the following numbers is the largest: ")) {
+    const numbers = query.match('/\d+/')?.map(parseInt)!;    
+    return Math.max(...numbers).toString();
   }
   return "";
 }
