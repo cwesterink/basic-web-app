@@ -54,6 +54,14 @@ export default function QueryProcessor(query: string): string {
       }
     }
   }
+  const powerMatch = query.match(/what is (\d+) to the power of (\d+)?/);
+  if (powerMatch) {
+    const x: number = parseInt(powerMatch[1]);
+    const y: number = parseInt(powerMatch[2]);
+    return (x**y).toString();
+  }
+
+  
 
 
   return "";

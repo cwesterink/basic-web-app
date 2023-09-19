@@ -53,5 +53,13 @@ describe("QueryProcessor", () => {
             "29"
           ));
     });
+
+    test('power', () => {
+        const query =  "What is 8 to the power of 82?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "1.130782121458166e+74"
+          ));
+    });
     
 });
