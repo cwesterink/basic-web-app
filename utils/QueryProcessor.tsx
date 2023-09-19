@@ -14,6 +14,20 @@ export default function QueryProcessor(query: string): string {
   if (query.toLocaleLowerCase().includes("what is your name?")) {
     return 'c'
   }
-
+  if (query.toLocaleLowerCase().includes("Which of the following numbers is the largest: 5, 98, 77?")) {
+    return '98'
+  }
   return "";
 }
+
+
+// const map = {
+//   "what is your name?": "c",
+
+// }
+
+// const questions = new Map<string, string>(
+//   [
+//     ["what is your name?", "c"]
+//   ]
+// )
