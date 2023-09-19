@@ -46,6 +46,12 @@ describe("QueryProcessor", () => {
             "624"
           ));
     });
-
+    test('prime', () => {
+        const query =  "Which of the following numbers are primes: 29, 24, 3, 34, 71?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "29"
+          ));
+    });
     
 });
